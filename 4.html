@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Завдання 4</title>
+    <script>
+        // Глобальна змінна для підрахунку натискань
+        let counter = 0; 
+        
+        function addRow() {
+            counter++; // Збільшуємо лічильник
+            // Знаходимо блок виводу і додаємо в нього новий HTML-рядок
+            document.getElementById("output").innerHTML += "<p>Рядок №" + counter + "</p>";
+        }
+    </script>
+</head>
+<body style="font-family: Arial, sans-serif; padding: 20px;">
+    <h2>Завдання 4 (Лічильник натискань)</h2>
+    <a href="index.html">Повернутися до меню</a><br><br>
+    
+    <button onclick="addRow()" style="padding: 10px 20px; font-size: 16px;">Додати рядок</button>
+    
+    <div id="output" style="margin-top: 20px; font-size: 18px; font-weight: bold; color: #333;"></div>
+</body>
+</html>
