@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Завдання 3</title>
+    <script>
+        // Код обгорнуто у функцію
+        function calculateTime() {
+            let hStr = prompt("Введіть кількість годин (0-23):", "");
+            let mStr = prompt("Введіть кількість хвилин (0-59):", "");
+
+            let h = parseInt(hStr);
+            let m = parseInt(mStr);
+
+            if (isNaN(h) || isNaN(m) || h < 0 || h > 23 || m < 0 || m > 59) {
+                alert("Помилка: Введено некоректний час. Години мають бути від 0 до 23, хвилини від 0 до 59.");
+            } else {
+                m++;
+                if (m === 60) {
+                    m = 0;
+                    h++;
+                    if (h === 24) {
+                        h = 0;
+                    }
+                }
+                
+                let hFormated = h < 10 ? "0" + h : h;
+                let mFormated = m < 10 ? "0" + m : m;
+
+                alert(`Через 1 хвилину буде: ${hFormated}:${mFormated}`);
+            }
+        }
+    </script>
+</head>
+<body style="font-family: Arial, sans-serif; padding: 20px;">
+    <h2>Завдання 3 (Час)</h2>
+    <a href="index.html">Повернутися до меню</a><br><br>
+    
+    <button onclick="calculateTime()" style="padding: 10px 20px; font-size: 16px;">Розрахувати час</button>
+</body>
+</html>
