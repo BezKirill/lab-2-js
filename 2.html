@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Завдання 2</title>
+    <script>
+        // Код обгорнуто у функцію
+        function calculate() {
+            let xStr = prompt("Введіть перше число (x):", "");
+            let yStr = prompt("Введіть друге число (y):", "");
+            let op = prompt("Введіть знак операції (+, -, *, /):", "");
+
+            let x = parseFloat(xStr);
+            let y = parseFloat(yStr);
+
+            if (isNaN(x) || isNaN(y)) {
+                alert("Помилка: Введено некоректні числа.");
+            } else {
+                let result;
+                let error = false;
+
+                if (op === '+') { result = x + y; }
+                else if (op === '-') { result = x - y; }
+                else if (op === '*') { result = x * y; }
+                else if (op === '/') {
+                    if (y === 0) {
+                        alert("Помилка: Ділення на нуль неможливе!");
+                        error = true;
+                    } else {
+                        result = x / y;
+                    }
+                } else {
+                    alert("Помилка: Невідомий знак операції.");
+                    error = true;
+                }
+
+                if (!error) {
+                    alert(`Результат: ${x} ${op} ${y} = ${result}`);
+                }
+            }
+        }
+    </script>
+</head>
+<body style="font-family: Arial, sans-serif; padding: 20px;">
+    <h2>Завдання 2 (Калькулятор)</h2>
+    <a href="index.html">Повернутися до меню</a><br><br>
+    
+    <button onclick="calculate()" style="padding: 10px 20px; font-size: 16px;">Запустити калькулятор</button>
+</body>
+</html>
